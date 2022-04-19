@@ -1,7 +1,7 @@
 {{ config(
-  materialized='incremental',
-  unique_key='row_id',
-  schema='data_source'
+  materialized = 'incremental',
+  unique_key = 'row_id',
+  schema = 'data_source'
 ) }}
 
 SELECT
@@ -42,5 +42,5 @@ LEFT JOIN
     {{ source('data_source', 'returns') }} r
     ON o.order_id = r.order_id
 {% if is_incremental() %}
-    WHERE o.row_id > (SELECT MAX(row_id) FROM {{ this }})
+    WHERE CAST(o.row_id as integer) > (SELECT MAX(CAST(row_id as integer)) FROM {{ source('data_storage', 'order') }})
 {% endif %}

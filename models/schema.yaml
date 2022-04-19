@@ -1,0 +1,15 @@
+version: 2
+
+sources:
+  - name: data_source
+    database: globalsuperstore
+    tables:
+      - name: orders
+      - name: peoples
+      - name: returns
+      - name: tmp_orders
+
+  - name: data_storage
+    database: globalsuperstore
+    tables:
+      - name: order

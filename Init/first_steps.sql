@@ -46,49 +46,60 @@ CREATE TABLE globalsuperstore.data_source.returns
 
 --------------------------------------------------------
 
-CREATE TABLE globalsuperstore.data_storage.product (
-  product_key             STRING    NOT NULL
-, product_name            STRING
-, product_category        STRING
-, product_sub_category    STRING
-);
-
-CREATE TABLE globalsuperstore.data_storage.country (
-  country_name            STRING    NOT NULL
-, country_region          STRING
-, country_market          STRING
-, country_manager         STRING
-);
-
-CREATE TABLE globalsuperstore.data_storage.location (
-  location_key            STRING    NOT NULL
-, location_country        STRING    NOT NULL
-, location_state          STRING
-, location_city           STRING
-, location_postal_code    INTEGER
+CREATE TABLE globalsuperstore.data_storage.order (
+  order_key                 INTEGER    NOT NULL
+, order_id                  STRING  
+, order_date                DATE  
+, order_is_return           BOOLEAN 
+, order_customer_key        STRING    NOT NULL
+, order_location_key        STRING    NOT NULL
+, order_region_key          STRING    NOT NULL
+, order_product_key         STRING    NOT NULL
+, order_priority            STRING
+, order_ship_mode           STRING
+, order_ship_date           DATE
+, order_ship_postal_code    INTEGER
+, order_quantity            INTEGER 
+, order_discount            FLOAT 
+, order_sales_usd           FLOAT 
+, order_shipping_cost_usd   FLOAT 
+, order_profit_usd          FLOAT 
 );
 
 CREATE TABLE globalsuperstore.data_storage.customer (
-  customer_key            STRING    NOT NULL
-, customer_name           STRING
-, customer_segment        STRING
+  customer_key              STRING    NOT NULL
+, customer_name             STRING
+, customer_segment          STRING
 );
 
+CREATE TABLE globalsuperstore.data_storage.product (
+  product_key               STRING    NOT NULL
+, product_name              STRING
+, product_category_name     STRING
+, product_sub_category_name STRING
+);
 
-CREATE TABLE globalsuperstore.data_storage.order (
-  order_key					      INTEGER    NOT NULL
-, order_id					      STRING	
-, order_date				      DATE	
-, order_is_return			    BOOLEAN	
-, order_customer_key		  STRING    NOT NULL
-, order_location_key		  STRING    NOT NULL
-, order_product_key			  STRING    NOT NULL
-, order_ship_mode			    STRING	
-, order_ship_date			    DATE	
-, order_quantity			    INTEGER	
-, order_discount			    FLOAT	
-, order_sales_usd			    FLOAT	
-, order_shipping_cost_usd	FLOAT	
-, order_profit_usd			  FLOAT	
-, order_detail_priority		STRING
+CREATE TABLE globalsuperstore.data_storage.country (
+  country_key               STRING    NOT NULL
+, country_market_key        STRING    NOT NULL
+, country_name              STRING
+);
+
+CREATE TABLE globalsuperstore.data_storage.location (
+  location_key              STRING    NOT NULL
+, location_country_key      STRING    NOT NULL
+, location_state_name       STRING
+, location_city_name        STRING
+);
+
+CREATE TABLE globalsuperstore.data_storage.region (
+  region_key                STRING    NOT NULL
+, region_market_key         STRING    NOT NULL
+, region_name               STRING
+, region_manager_name       STRING
+);
+
+CREATE TABLE globalsuperstore.data_storage.market (
+  market_key                STRING    NOT NULL
+, market_name               STRING
 );
