@@ -1,0 +1,7 @@
+version: 2
+
+sources:
+  - name: data_source
+    database: globalsuperstore
+    tables:
+      - name: tmp_orders
