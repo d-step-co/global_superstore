@@ -5,7 +5,7 @@ The purpose of this process is to take a production like source from a sales sys
 ### Legend
 The fictious company Global Superstore is an e-commerce seller of office supplies and equipment, they have sales staff who are responsible for geographical regions and must consider customer returns.
 <br />
-<a href="https://drive.google.com/drive/folders/1rjurPuqOjcsdTEdqKRbqZjr-dwXk7ml9" target="_blank">Source Dataset</a>
+<a href="https://drive.google.com/drive/folders/1rjurPuqOjcsdTEdqKRbqZjr-dwXk7ml9" target="_blank">Source Dataset</a></p>
 <br />
 <br />
 For this demo project were chosen 3 modern cloud tools:
@@ -23,8 +23,7 @@ Yes, it isn't a classical 3NF form and it looks a bit debatable, but I decided s
 <br />
 <br />
 Next my step was a Data Base initializing and creating of layers and tables in my Warehouse.<br />
-<a href="https://github.com/d-step-co/global_superstore/blob/main/Init/first_steps.sql" target="_blank">SQL code you could find here</a>
-<br />
+<a href="https://github.com/d-step-co/global_superstore/blob/main/Init/first_steps.sql" target="_blank">SQL code you could find here</a></p>
 <br />
 ### Result
 As a result of data modeling and data transformation process I've got next dataflow:
