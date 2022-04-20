@@ -19,7 +19,7 @@ FROM
       , ROUND(SUM(o.order_profit_usd), 2)                           as profit_usd
       , ROUND(SAFE_DIVIDE(SUM(o.order_profit_usd), SUM(o.order_sales_usd))* 100, 2) as margin_percent
     FROM 
-        `globalsuperstore.data_storage.order` o
+        {{ ref('order') }} o
     WHERE
         EXTRACT(YEAR FROM o.order_date) = 2015
     GROUP BY

@@ -9,9 +9,9 @@ SELECT DISTINCT
   , o.state       as location_state_name
   , o.city        as location_city_name
 FROM
-    {{ source('data_source', 'tmp_orders') }} o
+    {{ ref('tmp_orders') }} o
 WHERE
     NOT EXISTS (SELECT l.location_key 
-                FROM {{ source('data_storage', 'location') }} l
+                FROM globalsuperstore.data_storage.location l
                 WHERE l.location_key = CONCAT(LEFT(o.state, 1), LEFT(o.city, 1) ,'-', LEFT(REGEXP_REPLACE(TO_HEX(MD5(CONCAT(o.city, o.state))), r"[^0-9]+", ""), 8))
                 )

@@ -9,9 +9,9 @@ SELECT
   , SUM(o.order_quantity)               as quantity
   , ROUND(SUM(o.order_sales_usd), 2)    as sales_usd
 FROM
-    {{ source('data_storage', 'order') }} o
+    {{ ref('order') }} o
 LEFT JOIN
-    {{ source('data_storage', 'product') }} p
+    {{ ref('product') }} p
     ON o.order_product_key = p.product_key
 WHERE
     EXTRACT(YEAR FROM o.order_date) = 2015

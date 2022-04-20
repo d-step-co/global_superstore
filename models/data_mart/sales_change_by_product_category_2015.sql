@@ -18,9 +18,9 @@ FROM
       , null                                as quantity_2015
       , null                                as sales_usd_2015
     FROM
-        {{ source('data_storage', 'order') }} o
+        {{ ref('order') }} o
     LEFT JOIN
-        {{ source('data_storage', 'product') }} p
+        {{ ref('product') }} p
         ON o.order_product_key = p.product_key
     WHERE
         EXTRACT(YEAR FROM o.order_date) =2014
@@ -38,9 +38,9 @@ FROM
       , SUM(o.order_quantity)               as quantity_2015
       , ROUND(SUM(o.order_sales_usd), 2)    as sales_usd_2015
     FROM
-        {{ source('data_storage', 'order') }} o
+        {{ ref('order') }} o
     LEFT JOIN
-        {{ source('data_storage', 'product') }} p
+        {{ ref('product') }} p
         ON o.order_product_key = p.product_key
     WHERE
         EXTRACT(YEAR FROM o.order_date) = 2015

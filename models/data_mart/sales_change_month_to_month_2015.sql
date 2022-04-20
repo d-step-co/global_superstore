@@ -9,7 +9,7 @@ SELECT
   , COUNT(DISTINCT order_id)              as sales_amount
   , ROUND(SUM(o.order_sales_usd), 2)      as sales_usd
 FROM 
-    {{ source('data_storage', 'order') }} o
+    {{ ref('order') }} o
 WHERE
     o.order_date BETWEEN '2014-12-01' AND '2015-12-31'
 GROUP BY
@@ -28,6 +28,7 @@ FROM tab t
 
 SELECT
     FORMAT_DATE("%b %Y", f.month)  as month
+  , f.sales_amount
   , f.sales_usd
   , f.change_sales_amount
   , f.change_sales_usd

@@ -22,7 +22,7 @@ SELECT
   , ROUND(CAST(REPLACE(REPLACE(REPLACE(shipping_cost, ',', '.'), '$', ''), ' ', '') as float64), 2) as order_shipping_cost_usd
   , ROUND(CAST(REPLACE(REPLACE(REPLACE(profit, ',', '.'), '$', ''), ' ', '') as float64), 2)        as order_profit_usd
 FROM
-    {{ source('data_source', 'tmp_orders') }}
+    {{ ref('tmp_orders') }}
 {% if is_incremental() %}
 WHERE
     CAST(row_id as integer) > (SELECT MAX(order_key) FROM {{ this }})

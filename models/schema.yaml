@@ -7,18 +7,6 @@ sources:
       - name: orders
       - name: peoples
       - name: returns
-      - name: tmp_orders
-
-  - name: data_storage
-    database: globalsuperstore
-    tables:
-      - name: order
-      - name: country
-      - name: customer
-      - name: location
-      - name: market
-      - name: product
-      - name: region
 
 models:
   - name: order
