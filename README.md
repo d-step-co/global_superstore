@@ -3,9 +3,9 @@ This project was designed as a part of a Case Study in applying process for Data
 <br />
 The purpose of this process is to take a production like source from a sales system and turn it into a data warehouse schema for reporting. 
 ### Legend
-The fictious company Global Superstore is an e-commerce seller of office supplies and equipment, they have sales staff who are responsible for geographical regions and must consider customer returns.​
+The fictious company Global Superstore is an e-commerce seller of office supplies and equipment, they have sales staff who are responsible for geographical regions and must consider customer returns.
 <br />
-[Source Dataset](https://drive.google.com/drive/folders/1rjurPuqOjcsdTEdqKRbqZjr-dwXk7ml9)
+<a href="https://drive.google.com/drive/folders/1rjurPuqOjcsdTEdqKRbqZjr-dwXk7ml9" target="_blank">Source Dataset</a>
 <br />
 <br />
 For this demo project were chosen 3 modern cloud tools:
@@ -23,7 +23,7 @@ Yes, it isn't a classical 3NF form and it looks a bit debatable, but I decided s
 <br />
 <br />
 Next my step was a Data Base initializing and creating of layers and tables in my Warehouse.<br />
-[SQL code you could find here](https://github.com/d-step-co/global_superstore/blob/main/Init/first_steps.sql)
+<a href="https://github.com/d-step-co/global_superstore/blob/main/Init/first_steps.sql" target="_blank">SQL code you could find here</a>
 <br />
 <br />
 ### Result
