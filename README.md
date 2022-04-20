@@ -1,5 +1,5 @@
 ## Global Superstore Demo Project
-This project was designed as a part of a Case Study in applying process for Data Engineer role in Daniel Wellington company. 
+This project was designed as a part of a Case Study in applying process for Data Engineer role. 
 <br />
 The purpose of this process is to take a production like source from a sales system and turn it into a data warehouse schema for reporting. 
 ### Legend
@@ -40,6 +40,29 @@ Here is 3 clearly steps:
 It is noteworthy that with this approach, we can load "facts" and "dimensions" tables at the same time.
 <br />
 <br />
+In the current implementation Data Marts layer materialized as view.
+<br />
+This allows to have access to up-to-date aggregated data at any time.
+<br />
+<br />
 As a result we have next Data Warehouse structure:
 
 ![plot](https://live.staticflickr.com/65535/52017982953_3d7c2e5666_c.jpg)
+<br />
+### Conclusion
+This Demo project already done to deploy in production.
+<br />
+If you work as a team you need just two things:
++ chose and enable team plan for **dbt**
++ enable bealing for your **Big Query** account
+
+That's all what you need.
+<br />
+<br />
+Job scheduling and data testing for unique keys and for not null key values already available for this project.
+<br />
+<br />
+![plot](https://live.staticflickr.com/65535/52017137252_897619c670_o.png)
+<br />
+<br />
+If you would like to have access to real data in BigQuery or discuss this demo project, just let me know by email: d.step.co@gmail.com
