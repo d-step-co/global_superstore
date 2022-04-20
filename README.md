@@ -38,17 +38,22 @@ Here is 3 clearly steps:
 + Collecting all of the data in a temporary table
 + Creating Data Storage layer
 + Creating Data Marts layer
+
 It is noteworthy that with this approach, we can load "facts" and "dimensions" tables at the same time.
+
 <br />
-<br />
+
 In the current implementation Data Marts layer materialized as view.
 <br />
 This allows to have access to up-to-date aggregated data at any time.
+
 <br />
 <br />
+
 As a result we have next Data Warehouse structure:
 
 ![plot](https://live.staticflickr.com/65535/52017982953_3d7c2e5666_c.jpg)
+
 
 ### Conclusion
 This Demo project already done to deploy in production.
@@ -60,6 +65,7 @@ If you work as a team you need just two things:
 That's all what you need.
 
 <br />
+
 Job scheduling and data testing for unique keys and for not null key values already available for this project.
 <br />
 
