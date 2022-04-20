@@ -72,4 +72,4 @@ Job scheduling and data testing for unique keys and for not null key values alre
 ![plot](https://live.staticflickr.com/65535/52017137252_897619c670_o.png)
 
 <br />
-If you would like to have access to real data in BigQuery or discuss this demo project, just let me know by email: d.step.co@gmail.com
+If you would like to have access to real data in BigQuery or discuss this demo project, just let me know by email: <p><a href="mailto:d.step.co@gmail.com">d.step.co@gmail.com</a></p>
