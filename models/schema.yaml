@@ -13,6 +13,12 @@ sources:
     database: globalsuperstore
     tables:
       - name: order
+      - name: country
+      - name: customer
+      - name: location
+      - name: market
+      - name: product
+      - name: region
 
 models:
   - name: order

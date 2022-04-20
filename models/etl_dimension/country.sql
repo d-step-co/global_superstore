@@ -4,8 +4,13 @@
 ) }}
 
 SELECT DISTINCT
-    CONCAT(UPPER(LEFT(country, 2)),'-', LEFT(REGEXP_REPLACE(TO_HEX(MD5(country)), r"[^0-9]+", ""), 6))  as country_key
-  , CONCAT(UPPER(LEFT(market, 2)),'-', LEFT(REGEXP_REPLACE(TO_HEX(MD5(market)), r"[^0-9]+", ""), 4))    as country_market_key
-  , country as country_name
+    CONCAT(UPPER(LEFT(o.country, 2)),'-', LEFT(REGEXP_REPLACE(TO_HEX(MD5(o.country)), r"[^0-9]+", ""), 6))  as country_key
+  , CONCAT(UPPER(LEFT(o.market, 2)),'-', LEFT(REGEXP_REPLACE(TO_HEX(MD5(o.market)), r"[^0-9]+", ""), 4))    as country_market_key
+  , o.country as country_name
 FROM
-    {{ source('data_source', 'tmp_orders') }}
+    {{ source('data_source', 'tmp_orders') }} o
+WHERE
+    NOT EXISTS (SELECT c.country_key 
+                FROM {{ source('data_storage', 'country') }} c 
+                WHERE c.country_key = CONCAT(UPPER(LEFT(o.country, 2)),'-', LEFT(REGEXP_REPLACE(TO_HEX(MD5(o.country)), r"[^0-9]+", ""), 6))
+                )
