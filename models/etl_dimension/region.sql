@@ -9,9 +9,9 @@ SELECT DISTINCT
   , o.region as region_name
   , o.person as region_manager_name
 FROM
-    {{ source('data_source', 'tmp_orders') }} o
+    {{ ref('tmp_orders') }} o
 WHERE
     NOT EXISTS (SELECT r.region_key 
-                FROM {{ source('data_storage', 'region') }} r
+                FROM globalsuperstore.data_storage.region r
                 WHERE r.region_key = CONCAT(LEFT(o.region, 1), UPPER(SUBSTR(o.region, 4, 1)) ,'-', LEFT(REGEXP_REPLACE(TO_HEX(MD5(o.region)), r"[^0-9]+", ""), 4))
                 )

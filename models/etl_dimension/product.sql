@@ -9,9 +9,9 @@ SELECT DISTINCT
   , o.category        as product_category_name
   , o.sub_category    as product_sub_category_name
 FROM
-    {{ source('data_source', 'tmp_orders') }} o
+    {{ ref('tmp_orders') }} o
 WHERE
     NOT EXISTS (SELECT p.product_key 
-                FROM {{ source('data_storage', 'product') }} p
+                FROM globalsuperstore.data_storage.product p
                 WHERE p.product_key = o.product_id
                 )

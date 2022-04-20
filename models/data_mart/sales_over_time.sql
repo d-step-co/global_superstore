@@ -16,7 +16,7 @@ SELECT
   , o.order_quantity                    as quantity
   , o.order_sales_usd                   as sales_usd
 FROM
-    {{ source('data_storage', 'order') }} o
+    {{ ref('order') }} o
 LEFT JOIN
-    {{ source('data_storage', 'product') }} p
+    {{ ref('product') }} p
     ON o.order_product_key = p.product_key

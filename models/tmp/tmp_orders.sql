@@ -40,5 +40,4 @@ LEFT JOIN
 LEFT JOIN
     {{ source('data_source', 'returns') }} r
     ON o.order_id = r.order_id
-WHERE CAST(o.row_id as integer) > (SELECT MAX(CAST(row_id as integer)) FROM {{ source('data_storage', 'order') }})
-
+WHERE CAST(o.row_id as integer) > (SELECT MAX(CAST(row_id as integer)) FROM globalsuperstore.data_storage.order)
