@@ -9,8 +9,8 @@ SELECT
   , ROUND(SAFE_DIVIDE(SUM(returned), SUM(total)), 2) as return_rate
 FROM
     (SELECT 
-        l.location_state_name                   as state
-      , COUNT(DISTINCT o.order_id)              as total
+        l.location_state_name               as state
+      , COUNT(DISTINCT o.order_id)          as total
       , COUNT(DISTINCT
                 CASE o.order_is_return
                 WHEN true THEN o.order_id

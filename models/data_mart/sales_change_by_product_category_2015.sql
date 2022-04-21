@@ -23,7 +23,7 @@ FROM
         {{ ref('product') }} p
         ON o.order_product_key = p.product_key
     WHERE
-        EXTRACT(YEAR FROM o.order_date) =2014
+        EXTRACT(YEAR FROM o.order_date) = 2014
     GROUP BY
         p.product_category_name
       , p.product_sub_category_name
