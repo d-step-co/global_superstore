@@ -8,7 +8,7 @@ The fictious company Global Superstore is an e-commerce seller of office supplie
 + <a href="https://drive.google.com/drive/folders/1rjurPuqOjcsdTEdqKRbqZjr-dwXk7ml9" target="_blank">Source Dataset</a></p>
 For this demo project were chosen 3 modern cloud tools:
 + **Google Big Query** - as a data warehouse
-+ **dbt** - as a data modeling and documentation tool
++ **dbt Cloud** - as a data modeling and documentation tool
 + **GitHub** - as a project code rerository and presentation tool
 ### First steps
 First my step was a data exploration.<br />
